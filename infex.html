@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mistérios do Oceano - Blog Tech</title>
+  <style>
+    /* Estilização geral da página com paleta de cores oceânica */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f8fb;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Cabeçalho principal com tom azul escuro */
+    header {
+      background-color: #001F3F;
+      color: #FFFFFF;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Estilização do container principal */
+    main {
+      background-color: #FFFFFF;
+      color: #001F3F;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Estrutura dos artigos */
+    article {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 2px dashed #001F3F;
+    }
+
+    /* Divs para organização de conteúdo */
+    .conteudo-post {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* Div com estilo especial e fundo claro conforme a rubrica */
+    .claro {
+      background-color: #e6f2ff;
+      border-left: 4px solid #001F3F;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Ajuste do tamanho das imagens */
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .artigo-autor {
+      font-weight: bold;
+      color: #0056b3;
+    }
+
+    /* Estilização da tela do vídeo do YouTube */
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    /* Estilização dos botões de interatividade */
+    button {
+      cursor: pointer;
+      background-color: #001F3F;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      width: fit-content;
+    }
+
+    button:hover {
+      background-color: #003366;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho do Blog -->
+  <header>
+    <h1>Mistérios do Oceano</h1>
+    <p>Explorando os segredos das profundezas marinhas - Por Eloah Monteiro Ribeiro</p>
+  </header>
+
+  <!-- Elemento principal utilizando a tag semântica section -->
+  <main>
+    <section>
+
+      <!-- Primeiro Artigo utilizando a tag semântica article -->
+      <article>
+        <h2>O Enigma da Fossa das Marianas</h2>
+        <p class="artigo-autor">Por: Eloah Monteiro Ribeiro</p>
+
+        <!-- Div para agrupar o conteúdo do post -->
+        <div class="conteudo-post">
+          <img src="imagens/marianas.png" alt="Ilustração das profundezas da Fossa das Marianas">
+
+          <!-- Parágrafo 1 de 4 -->
+          <p>A Fossa das Marianas é considerada o local mais profundo de todos os oceanos do planeta Terra, atingindo quase onze mil metros de profundidade na Fossa Challenger. Nesse ambiente de escuridão total e pressão extrema, a vida prospera de maneiras surpreendentes e ainda pouco compreendidas pela ciência moderna.</p>
+
+          <!-- Parágrafo 2 de 4 -->
+          <p>Organismos extraordinários e criaturas bioluminescentes habitam essa região abissal, adaptando-se a condições que seriam letais para a maioria das espécies terrestres. As expedições científicas recentes continuam revelando novas espécies de peixes e invertebrados com características únicas.</p>
+
+          <!-- Incorporação do vídeo do YouTube recebido -->
+          <iframe src="https://www.youtube.com/embed/MxuadkKMziA" title="Vídeo sobre os mistérios do oceano" allowfullscreen></iframe>
+
+          <!-- Botão de like (1 botão) -->
+          <button class="btn-like">👍 Curtir <span>0</span></button>
+        </div>
+      </article>
+
+      <!-- Segundo Artigo utilizando a tag semântica article -->
+      <article>
+        <h2>A Lenda de Atlântida e Cidades Submersas</h2>
+        <p class="artigo-autor">Por: Eloah Monteiro Ribeiro</p>
+
+        <!-- Div com a classe especificada 'claro' conforme a rubrica -->
+        <div class="claro">
+          <p style="margin: 0; font-weight: bold;">Destaque Arqueológico:</p>
+        </div>
+
+        <!-- Div para agrupar o conteúdo do segundo post -->
+        <div class="conteudo-post">
+          <img src="imagens/atlantida.png" alt="Desenho de ruínas submersas no oceano">
+
+          <!-- Parágrafo 3 de 4 -->
+          <p>O mito de Atlântida, relatado inicialmente pelo filósofo grego Platão, inspira exploradores e historiadores há milênios na busca por civilizações perdidas sob as águas. Embora a existência da cidade permaneça no campo das lendas, os oceanos realmente escondem diversas ruínas históricas autênticas.</p>
+
+          <!-- Parágrafo 4 de 4 -->
+          <p>Cidades antigas engolidas pela elevação do nível do mar ou por terremotos catastróficos, como Thonis-Heracleion no Egito, provam que o fundo do oceano preserva partes valiosas do passado da humanidade. Estudar esses locais ajuda a entender melhor a relação entre o ser humano e as transformações do planeta.</p>
+
+          <!-- Botão de like (1 botão) -->
+          <button class="btn-like">👍 Curtir <span>0</span></button>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Script em JavaScript para o funcionamento do botão de like -->
+  <script>
+    const botoes = document.querySelectorAll(".btn-like");
+
+    botoes.forEach(function (botao) {
+      let curtiu = false;
+
+      botao.addEventListener("click", function () {
+        let contador = botao.querySelector("span");
+        if (curtiu === false) {
+          contador.textContent = Number(contador.textContent) + 1;
+          curtiu = true;
+        } else {
+          contador.textContent = Number(contador.textContent) - 1;
+          curtiu = false;
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
 
