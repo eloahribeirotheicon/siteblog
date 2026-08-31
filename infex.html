@@ -1,13 +1,123 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mistérios do Oceano</title>
+  <style>
+    header {
+      background-color: #001F3F; /* Azul marinho profundo */
+      color: #FFFFFF;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    main {
+      background-color: #FFFFFF;
+      color: #001F3F;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .conteudo-post {
+      display: flex;
+      gap: 16px;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .artigo-autor {
+      font-weight: bold;
+    }
+
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    button {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-<h1>Meu blog music</h1>
-<p>Vou compartilhar conhecimentos sobre music</p>
+  <header>
+    <h1>Mistérios do Oceano</h1>
+    <p>Explorando os segredos, criaturas e locais inacessíveis das profundezas marinhas</p>
+  </header>
+
+  <main>
+    <article>
+      <div class="conteudo-post">
+        <img src="imagens/marianas.png" alt="Ilustração das profundezas da Fossa das Marianas">
+        <div>
+          <h2>O Enigma da Fossa das Marianas</h2>
+          <p class="artigo-autor">Por: Seu Nome</p>
+          <p>A Fossa das Marianas é o local mais profundo dos oceanos. O que realmente habita nas zonas abissais onde a luz do sol nunca chega?</p>
+          
+          <!-- Vídeo do YouTube incorporado -->
+          <iframe src="https://www.youtube.com/embed/MxuadkKMziA" title="Vídeo sobre o oceano" allowfullscreen></iframe>
+          <br><br>
+          <button>❤️<span>0</span></button>
+          <button>👍<span>0</span></button>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="conteudo-post">
+        <img src="imagens/atlantida.png" alt="Desenho conceitual de ruínas submersas">
+        <div>
+          <h2>A Lenda de Atlântida</h2>
+          <p class="artigo-autor">Por: Seu Nome</p>
+          <p>Mito ou realidade histórica? Investiguemos as teorias e expedições marítimas que tentam localizar a famosa cidade perdida.</p>
+          <button>❤️<span>0</span></button>
+          <button>👍<span>0</span></button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+      let curtiu = false;
+
+      botao.addEventListener("click", botaoClicado);
+
+      function botaoClicado() {
+        console.log("fui clicado");
+        let texto = botao.querySelector("span");
+        if (curtiu === false) {
+          texto.textContent++;
+          curtiu = true;
+        } else {
+          texto.textContent--;
+          curtiu = false; 
+        }
+      }
+    });
+  </script>
 </body>
 </html>
