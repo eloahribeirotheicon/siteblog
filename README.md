@@ -1,6 +1,6 @@
 # siteblog
-Mistérios do Oceano - Blog Tech
-
+# Mistérios do Oceano - Blog Tech
+# link para o site da eloah: https://eloahribeirotheicon.github.io/siteblog/
 
 ​Este projeto é um site em formato de blog desenvolvido por Eloah Monteiro Ribeiro para a disciplina de programação. O objetivo é apresentar curiosidades e fenômenos das profundezas marinhas de forma acessível e interativa.
 
